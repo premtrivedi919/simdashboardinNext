@@ -35,6 +35,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ![photo1687171618](https://github.com/premtrivedi919/simdashboardinNext/assets/121801455/0ebf03b8-a02e-4295-93b7-aa95db508869)
 
+![photo1687181506](https://github.com/premtrivedi919/simdashboardinNext/assets/121801455/b22f7914-4271-4398-869c-be9fd99e86ce)
 
 
 
