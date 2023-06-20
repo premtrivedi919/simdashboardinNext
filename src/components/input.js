@@ -1,9 +1,14 @@
-import React from 'react';
 
-import Button from '@atlaskit/button';
-
-const ButtonDefaultExample = () => {
-  return <Button>Default button</Button>;
+const Input = ({ inputValue }) => {
+  return (
+    <input
+      className="input2"
+      type="text"
+      placeholder="Enter username"
+      autoComplete="on"
+      value={inputValue}
+    />
+  );
 };
 
-export default ButtonDefaultExample;
+export default Input;
