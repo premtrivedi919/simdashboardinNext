@@ -9,16 +9,16 @@ const SignIn = () => {
       <div className="strategycont">
         <div className="aligntext">
           <div>
-            <span>Equity</span> <span>US</span>
+            <span class="c1">Equity</span> <span class="c11">US</span>
           </div>
-          <div>View all</div>
+          <div class="c2">View all</div>
         </div>
 
         <div className="cardstrategy">
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
+          <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
+          <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
+          <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
+          <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
         </div>
       </div>
       <div className="strategycont">

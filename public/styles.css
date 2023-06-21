@@ -10,18 +10,18 @@
   
 
   @font-face {
-  font-family: 'Segoe UI Italic';
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: normal;
-  src: local('Segoe UI Italic'), url('./fonts/Segoe UI Italic.woff') format('woff');
+  src: url('./fonts/NotoSans-Regular.ttf');
   }
   
 
   @font-face {
-  font-family: 'Segoe UI Bold';
+  font-family: 'SF Pro Text';
   font-style: normal;
   font-weight: normal;
-  src: local('Segoe UI Bold'), url('./fonts/Segoe UI Bold.woff') format('woff');
+  src: url('./fonts/SF-Pro-Display-Regular.woff') format('woff');
   }
   
 
@@ -35,6 +35,117 @@
 body{
   margin:0;
   font-family: "Segoe UI Regular";
+}
+.c1{
+  font-family: 'SF Pro Text';
+font-style: normal;
+font-weight: 500;
+font-size: 32px;
+line-height: 48px;
+/* identical to box height, or 150% */
+
+
+color: #44546F;
+}
+
+
+.css-9eg9l8-MuiTypography-root{
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* identical to box height, or 143% */
+  
+  
+  color: #4F4C4D;
+  
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin-top:24;
+
+
+}
+.c11{
+  font-family: 'SF Pro Text';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 24px;
+/* identical to box height, or 150% */
+
+
+color: #44546F;
+}
+
+.c2{
+  font-family: 'SF Pro Text';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 20px;
+/* identical to box height, or 143% */
+
+display: flex;
+align-items: center;
+text-align: center;
+text-decoration-line: underline;
+
+color: #44546F;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+
+.css-ag7rrr-MuiTypography-root{
+  font-family: "Segoe UI Regular";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  /* identical to box height, or 133% */
+  
+  display: flex;
+  align-items: center;
+  
+  color: #231F20;
+  
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.css-16m3jxf-MuiTypography-root{
+  font-family: 'Noto Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  
+  color: #4F4C4D;
+  
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+
+
 }
 .aligntext{
   display: flex;

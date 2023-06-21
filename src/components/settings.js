@@ -73,7 +73,7 @@ function stableSort(array, comparator) {
 const headCells = [
   {
     id: 'initialbalance',
-    numeric: true,
+    numeric: false,
     disablePadding: false,
     label: 'initialbalance',
   },
@@ -133,7 +133,7 @@ const headCells = [
   {
     id: 'action',
     numeric: false,
-    disablePadding: false,
+    disablePadding: true,
     label: 'action',
   },
 ];
