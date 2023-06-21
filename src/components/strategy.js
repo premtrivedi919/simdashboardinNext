@@ -1,6 +1,6 @@
 import Page from "../components/page";
 import BasicCard from "@/components/card";
-import ResponsiveAppBar from "../components/header.js";
+import ResponsiveAppBar from "./components/header.js";
 const SignIn = () => {
   return (
     <>
