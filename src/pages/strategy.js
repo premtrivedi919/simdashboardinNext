@@ -11,7 +11,7 @@ const SignIn = () => {
           <div>
             <span class="c1">Equity</span> <span class="c11">US</span>
           </div>
-          <div class="c2">View all</div>
+          <div className="c2">View all</div>
         </div>
 
         <div className="cardstrategy">
@@ -24,9 +24,9 @@ const SignIn = () => {
       <div className="strategycont">
         <div className="aligntext">
           <div>
-            <span>Equity</span> <span>India</span>
+            <span className="c1">Equity</span> <span className="c11">India</span>
           </div>
-          <div>View all</div>
+          <div className="c2">View all</div>
         </div>
 
         <div className="cardstrategy">
@@ -41,9 +41,9 @@ const SignIn = () => {
     <div className="strategycont">
         <div className="aligntext">
           <div>
-            <span>Options</span> <span>India</span>
+            <span className="c1">Options</span> <span className="c11">India</span>
           </div>
-          <div>View all</div>
+          <div className="c2">View all</div>
         </div>
 
         <div className="cardstrategy">
@@ -58,9 +58,9 @@ const SignIn = () => {
      <div className="strategycont">
         <div className="aligntext">
           <div>
-            <span>Spot</span> <span>Forex</span>
+            <span className="c1">Spot</span> <span className="c11">Forex</span>
           </div>
-          <div>View all</div>
+          <div class="c2">View all</div>
         </div>
 
         <div className="cardstrategy">
@@ -75,9 +75,9 @@ const SignIn = () => {
      <div className="strategycont">
         <div className="aligntext">
           <div>
-            <span>Spot</span> <span>Crypto</span>
+            <span className="c1">Spot</span> <span className="c11">Crypto</span>
           </div>
-          <div>View all</div>
+          <div className="c2">View all</div>
         </div>
 
         <div className="cardstrategy">

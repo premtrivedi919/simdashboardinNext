@@ -36,6 +36,24 @@ body{
   margin:0;
   font-family: "Segoe UI Regular";
 }
+.css-1q39md6-MuiButtonBase-root-MuiButton-root{
+  font-family: 'SF Pro Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 32px;
+  /* identical to box height, or 229% */
+  text-transform: none !important;
+  
+  color: #44546F;
+  
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
 .c1{
   font-family: 'SF Pro Text';
 font-style: normal;

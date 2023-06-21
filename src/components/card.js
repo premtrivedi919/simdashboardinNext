@@ -27,13 +27,22 @@ export default function BasicCard(props) {
                 </Typography>
 
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                {props.tag2}
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="10" height="10" rx="2" fill="#43A047"/>
+</svg> &nbsp;
+{props.tag2}
                 </Typography>
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                {props.tag3}
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="10" height="10" rx="2" fill="#C21C1D"/>
+</svg> &nbsp;
+  {props.tag3}
                 </Typography>
                 <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                {props.tag4}
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="10" height="10" rx="2" fill="#EB996E"/>
+</svg> &nbsp;
+   {props.tag4}
                 </Typography>
 
       </CardContent>
