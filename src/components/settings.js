@@ -330,7 +330,7 @@ export default function EnhancedTable()
 
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
-          <Table
+          <Table className='seetingtbl'
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
             size={dense ? 'small' : 'medium'}
@@ -410,10 +410,7 @@ export default function EnhancedTable()
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </Paper>
-      <FormControlLabel
-        control={<Switch checked={dense} onChange={handleChangeDense} />}
-        label="Dense padding"
-      />
+    
     </Box>
   );
 }

@@ -36,6 +36,39 @@ body{
   margin:0;
   font-family: "Segoe UI Regular";
 }
+.css-1qgma8u-MuiButtonBase-root-MuiTableSortLabel-root{
+  color: var(--light-color-text-subtle, #44546F);
+/* Heading/H200// */
+font-size: 12px;
+font-family: SF Pro Text;
+font-weight: 600;
+line-height: 16px;
+}
+.css-11w94w9-MuiTableCell-root{
+  color: var(--light-color-text, #172B4D);
+/* UI Text */
+font-size: 14px;
+font-family: SF Pro Text;
+line-height: 20px;
+}
+.css-1ygcj2i-MuiTableCell-root {
+  text-align: right;
+}
+.seetingtbl > .css-10dfkli-MuiTableCell-root{
+  text-align: right !important;
+}
+.seetingtbl > .css-1ygcj2i-MuiTableCell-root{
+  text-align: left !important;
+}
+.css-2pbtu6-MuiTypography-root{
+  color: #44546F;
+font-size: 32px;
+font-family: SF Pro Text;
+font-weight: 500;
+line-height: 48px;
+}
+
+
 .css-1q39md6-MuiButtonBase-root-MuiButton-root{
   font-family: 'SF Pro Text';
   font-style: normal;
