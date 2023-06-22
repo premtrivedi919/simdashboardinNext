@@ -1,30 +1,24 @@
-import axios from 'axios';
+// src/actions/authActions.js
 
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+import axios from 'axios';
 
 export const login = (username, password) => {
   return async (dispatch) => {
+    dispatch({ type: 'LOGIN_REQUEST' });
+
     try {
-      const response = await axios.post(
-        'https://staging.paper.quant-trade.io/api/user/login/',
-        {},
-        {
-          headers: {
-            'accept': 'application/json',
-            'X-CSRFToken': '4ko8S6LdNOKjtRyadtXxYERnp8m6SwqQaxmPtNA3C7O4ggvYzTJUfW9xHZuFk8Nn',
-          },
-        }
-      );
+      // Replace the API URL with a dummy login endpoint
+      const response = await axios.post('https://jsonplaceholder.typicode.com/posts', { username, password });
 
-      // Handle the response data or perform any necessary actions
-      console.log(response.data);
+      // Assuming the API response contains a token
+      const token = response.data.token;
 
-      // Dispatch the login success action
-      dispatch({ type: LOGIN_SUCCESS });
+      // Save the token to local storage or Redux state as needed
+      // localStorage.setItem('token', token);
+
+      dispatch({ type: 'LOGIN_SUCCESS', payload: token });
     } catch (error) {
-      // Handle error or dispatch failure action
-      console.error(error);
+      dispatch({ type: 'LOGIN_FAILURE', payload: error.message });
     }
   };
 };
-
