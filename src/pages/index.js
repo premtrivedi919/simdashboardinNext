@@ -1,47 +1,36 @@
-// ./pages/index.js
-
-import { useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchComments } from '../store/actions/commentsActions';
+import { login } from '../store/actions/authActions';
+import table from './table';
 
 const IndexPage = () => {
   const dispatch = useDispatch();
-  const { data, loading, error } = useSelector((state) => state.comments);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-  useEffect(() => {
-    
-    dispatch(fetchComments());
-  }, [dispatch]);
-
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
+  const handleLogin = () => {
+    dispatch(login(username, password));
+  };
 
   return (
     <div>
-      <h1>Comments</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Body</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((comment) => (
-            <tr key={comment.id}>
-              <td>{comment.name}</td>
-              <td>{comment.email}</td>
-              <td>{comment.body}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <h1>Homepage</h1>
+      {isLoggedIn ? (
+        <table />
+      ) : (
+        <div>
+          <label>
+            Username:
+            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+          </label>
+          <label>
+            Password:
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+          </label>
+          <button onClick={handleLogin}>Login</button>
+        </div>
+      )}
     </div>
   );
 };

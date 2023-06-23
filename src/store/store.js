@@ -1,18 +1,17 @@
-// src/store/index.js
-
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import commentsReducer from './reducers/commentsReducer';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import authReducer from './reducers/authReducer';
+import commentReducer from './reducers/commentsReducer';
 
-// Combine your reducers
 const rootReducer = combineReducers({
-  comments: commentsReducer,
   auth: authReducer,
-  // Other reducers go here
+  comments: commentReducer,
 });
 
-// Create the Redux store
-const store = createStore(rootReducer, applyMiddleware(thunkMiddleware));
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 export default store;
