@@ -1,27 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Typography from '@mui/material/Typography';
+
+import ResponsiveAppBar from '../components/header';
+import { fetchStrategies } from '../store/actions/strategyActions';
+import BasicCard from '../components/card';
+
+const Strategy = () => {
 
 
 
-import BasicCard from "@/components/card";
-import ResponsiveAppBar from "../components/header.js";
-
-
-const SignIn = () => {
-
+  const dispatch = useDispatch();
   const router = useRouter();
+
+  const { loading, strategies, error } = useSelector((state) => state.strategy);
+
+  useEffect(() => {
+    dispatch(fetchStrategies());
+  }, [dispatch]);
 
   const handleLoginSuccess = () => {
     router.push('/strategylist');
   };
 
+  if (loading) {
+    return <div>Loading strategies...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
 
   return (
     <>
       <ResponsiveAppBar />
 
       <div className="strategycont">
-        <div className="aligntext">
+      <div className="aligntext">
           <div>
             <span class="c1">Equity</span> <span class="c11">US</span>
           </div>
@@ -33,14 +51,48 @@ const SignIn = () => {
             </div>
         </div>
 
+        {/* Existing card components */}
         <div className="cardstrategy">
-          <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
+          {strategies.map((strategy) => (
+            <Card key={strategy.id} variant="outlined" sx={{ Width: 275 }}>
+              <CardContent>
+
+              <Typography variant="h5" component="div">
+              RF 100 -15M 
+                </Typography>
+
+                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+              Investment
+                </Typography>
+
+             
+                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="10" height="10" rx="2" fill="#43A047"/>
+</svg> &nbsp;
+ROI- {strategy.id}
+                </Typography>
+                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="10" height="10" rx="2" fill="#C21C1D"/>
+</svg> &nbsp;
+Drawdown- {strategy.name}
+                </Typography>
+                {/* Render the remaining properties similarly */}
+
+                <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="10" height="10" rx="2" fill="#EB996E"/>
+</svg> &nbsp;
+Users-following- {strategy.id}
+                </Typography>
+
+              </CardContent>
+            </Card>
+          ))}
         </div>
-      </div>
-      <div className="strategycont">
+
+        {/* Card components from SignIn */}
         <div className="aligntext">
           <div>
             <span className="c1">Equity</span> <span className="c11">India</span>
@@ -49,73 +101,15 @@ const SignIn = () => {
           <button className="c2 c2btn"  onClick={handleLoginSuccess}>View all</button>
             </div>
         </div>
-
         <div className="cardstrategy">
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment  " tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-        </div>
-      </div>
-
-
-    <div className="strategycont">
-        <div className="aligntext">
-          <div>
-            <span className="c1">Options</span> <span className="c11">India</span>
-          </div>
-          <div className="c2">
-          <button className="c2 c2btn"  onClick={handleLoginSuccess}>View all</button>
-            </div>
-        </div>
-
-        <div className="cardstrategy">
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-        </div>
-      </div>
-
-
-     <div className="strategycont">
-        <div className="aligntext">
-          <div>
-            <span className="c1">Spot</span> <span className="c11">Forex</span>
-          </div>
-          <div className="c2">
-          <button className="c2 c2btn"  onClick={handleLoginSuccess}>View all</button>
-            </div>
-        </div>
-
-        <div className="cardstrategy">
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-        </div>
-      </div>
-
-
-     <div className="strategycont">
-        <div className="aligntext">
-          <div>
-            <span className="c1">Spot</span> <span className="c11">Crypto</span>
-          </div>
-          <div className="c2">
-          <button className="c2 c2btn"  onClick={handleLoginSuccess}>View all</button>
-            </div>
-        </div>
-
-        <div className="cardstrategy">
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-          <BasicCard word="RF 100 -15M" tag1="Investment" tag2="ROI" tag3="Drawdown" tag4="users-following" />
+          <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
+          <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
+          <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
+         
         </div>
       </div>
     </>
   );
 };
 
-export default SignIn;
+export default Strategy;

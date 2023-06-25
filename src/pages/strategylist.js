@@ -6,8 +6,8 @@ import ResponsiveAppBar from "../components/header.js";
 
 const strategylist = ()=>{
   return (
-    <div>
-      <ResponsiveAppBar />
+    <div className="body">
+    <ResponsiveAppBar />
 <TablePage />
     </div>
   )

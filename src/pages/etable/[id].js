@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchSetting } from '../../store/actions/settingActions';
 import { useRouter } from 'next/router';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination } from '@mui/material';
+import { fetchComments } from '../../store/actions/supportActions';
 
 const EtablePage = () => {
   const dispatch = useDispatch();
@@ -18,8 +19,13 @@ const EtablePage = () => {
   useEffect(() => {
     if (id) {
       dispatch(fetchSetting(id));
+      dispatch(fetchComments(id)); // Fetch comments for the specific ID
     }
   }, [dispatch, id]);
+
+  const handleClick = (id) => {
+    router.push(`../report/${id}`); // Navigate to the report page with the specific ID
+  };
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -47,21 +53,44 @@ const EtablePage = () => {
   }
 
   return (
-    <div>
-      <h1>Etable</h1>
+    <div className="body">
+      <div className="bodynew">
+        <div>Markets</div>
+        <div>Rejected</div>
+        <div>Accounts</div>
+      </div>
+
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>ID</TableCell>
-              <TableCell>Title</TableCell>
+              <TableCell>Initial Balance</TableCell>
+              <TableCell>Current Balance</TableCell>
+              <TableCell>ROI</TableCell>
+              <TableCell>SL</TableCell>
+              <TableCell>TP</TableCell>
+              <TableCell>Qty</TableCell>
+              <TableCell>Quantity</TableCell>
+              <TableCell>Inverse</TableCell>
+              <TableCell>Pyramiding</TableCell>
+              <TableCell>Action</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {renderedData.map((item) => (
               <TableRow key={item.id}>
                 <TableCell>{item.id}</TableCell>
+                <TableCell>{item.id}</TableCell>
                 <TableCell>{item.title}</TableCell>
+                <TableCell>{item.id}</TableCell>
+                <TableCell>{item.body}</TableCell>
+                <TableCell>{item.id}</TableCell>
+                <TableCell>{item.name}</TableCell>
+                <TableCell>{item.id}</TableCell>
+                <TableCell>{item.email}</TableCell>
+                <TableCell>
+                  <button onClick={() => handleClick(item.id)}>View</button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>

@@ -5,7 +5,7 @@ export const fetchComments = () => {
     try {
       dispatch({ type: 'FETCH_COMMENTS_REQUEST' });
 
-      const response = await axios.get('https://jsonplaceholder.typicode.com/posts/1/comments');
+      const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
       const data = response.data;
 
       console.log('Fetched Comments:', data); // Add this line to check the fetched data

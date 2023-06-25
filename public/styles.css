@@ -36,6 +36,27 @@ body{
   margin:0;
   font-family: "Segoe UI Regular";
 }
+.body{
+  margin-left:46px;
+  margin-right:46px;
+}
+
+.bodynew{
+  display:flex;flex-direction:row;gap:20px;margin:26px;color:black;
+text-align: center;
+margin-bottom:46px;
+/* .Internal/Breadcrumbs/.BreadcrumbText */
+font-size: 14px;
+font-family: SF Pro Text;
+line-height: 24px;
+}
+.css-ag7rrr-MuiTypography-root{
+  width: 275px;
+}
+
+.css-9eg9l8-MuiTypography-root {
+  max-width: 160px !important;
+}
 .c2btn{
   cursor: pointer;
  background: #fff;

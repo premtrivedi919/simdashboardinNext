@@ -105,34 +105,59 @@ const TablePage = () => {
         <Table>
           <TableHead>
             <TableRow>
+             
+             
               <TableCell>
                 <TableSortLabel
                   active={orderBy === 'id'}
                   direction={orderBy === 'id' ? order : 'asc'}
                   onClick={() => handleSort('id')}
                 >
-                  ID
+                 Strategy Name
                 </TableSortLabel>
               </TableCell>
+
+
               <TableCell>
                 <TableSortLabel
                   active={orderBy === 'name'}
                   direction={orderBy === 'name' ? order : 'asc'}
                   onClick={() => handleSort('name')}
                 >
-                  Title
+                  Instrument
                 </TableSortLabel>
               </TableCell>
+
+
+
               <TableCell>
                 <TableSortLabel
                   active={orderBy === 'email'}
                   direction={orderBy === 'email' ? order : 'asc'}
                   onClick={() => handleSort('email')}
                 >
-                  Email
+                 ROI
                 </TableSortLabel>
               </TableCell>
-              <TableCell>Action</TableCell>
+
+              <TableCell> <TableSortLabel
+              active={orderBy === 'id'}
+                  direction={orderBy === 'id' ? order : 'asc'}
+                  onClick={() => handleSort('id')}
+                
+               >  Drawdown     </TableSortLabel></TableCell>
+              <TableCell><TableSortLabel
+              active={orderBy === 'id'}
+                  direction={orderBy === 'id' ? order : 'asc'}
+                  onClick={() => handleSort('id')}
+                
+               >  Users-following     </TableSortLabel></TableCell>
+              <TableCell><TableSortLabel
+              active={orderBy === 'id'}
+                  direction={orderBy === 'id' ? order : 'asc'}
+                  onClick={() => handleSort('id')}
+                
+               > Action    </TableSortLabel></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -141,8 +166,10 @@ const TablePage = () => {
               .map((item) => (
                 <TableRow key={item.id}>
                   <TableCell>{item.id}</TableCell>
-                  <TableCell>{item.name}</TableCell>
-                  <TableCell>{item.email}</TableCell>
+                  <TableCell>{item.title}</TableCell>
+                  <TableCell>{item.id}</TableCell>
+                  <TableCell>{item.id}</TableCell>
+                  <TableCell>{item.id}</TableCell>
                   <TableCell>
                     <button onClick={() => handleClick(item.id)}>View</button>
                   </TableCell>
