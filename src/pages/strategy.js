@@ -1,7 +1,21 @@
-import Page from "../components/page";
+import React from 'react';
+import { useRouter } from 'next/router';
+
+
+
 import BasicCard from "@/components/card";
 import ResponsiveAppBar from "../components/header.js";
+
+
 const SignIn = () => {
+
+  const router = useRouter();
+
+  const handleLoginSuccess = () => {
+    router.push('/strategylist');
+  };
+
+
   return (
     <>
       <ResponsiveAppBar />
@@ -11,7 +25,12 @@ const SignIn = () => {
           <div>
             <span class="c1">Equity</span> <span class="c11">US</span>
           </div>
-          <div className="c2">View all</div>
+
+
+          
+          <div className="c2">
+          <button className="c2 c2btn"  onClick={handleLoginSuccess}>View all</button>
+            </div>
         </div>
 
         <div className="cardstrategy">
@@ -26,7 +45,9 @@ const SignIn = () => {
           <div>
             <span className="c1">Equity</span> <span className="c11">India</span>
           </div>
-          <div className="c2">View all</div>
+          <div className="c2">
+          <button className="c2 c2btn"  onClick={handleLoginSuccess}>View all</button>
+            </div>
         </div>
 
         <div className="cardstrategy">
@@ -43,7 +64,9 @@ const SignIn = () => {
           <div>
             <span className="c1">Options</span> <span className="c11">India</span>
           </div>
-          <div className="c2">View all</div>
+          <div className="c2">
+          <button className="c2 c2btn"  onClick={handleLoginSuccess}>View all</button>
+            </div>
         </div>
 
         <div className="cardstrategy">
@@ -60,7 +83,9 @@ const SignIn = () => {
           <div>
             <span className="c1">Spot</span> <span className="c11">Forex</span>
           </div>
-          <div class="c2">View all</div>
+          <div className="c2">
+          <button className="c2 c2btn"  onClick={handleLoginSuccess}>View all</button>
+            </div>
         </div>
 
         <div className="cardstrategy">
@@ -77,7 +102,9 @@ const SignIn = () => {
           <div>
             <span className="c1">Spot</span> <span className="c11">Crypto</span>
           </div>
-          <div className="c2">View all</div>
+          <div className="c2">
+          <button className="c2 c2btn"  onClick={handleLoginSuccess}>View all</button>
+            </div>
         </div>
 
         <div className="cardstrategy">

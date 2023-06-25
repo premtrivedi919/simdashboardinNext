@@ -12,23 +12,45 @@ import {
   TablePagination,
   TableSortLabel
 } from '@mui/material';
+import { useRouter } from 'next/router';
+import { fetchSetting } from '../store/actions/settingActions';
+import Etable from '../components/Etable';
 
 const TablePage = () => {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.comments);
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
- 
- 
- 
+
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [orderBy, setOrderBy] = useState('id');
   const [order, setOrder] = useState('asc');
+  const [selectedId, setSelectedId] = useState(null); // Track the selected ID
 
   useEffect(() => {
     dispatch(fetchComments());
   }, [dispatch]);
 
+  // const router = useRouter();
+
+  // const handleClick = (id) => {
+  //   setSelectedId(id); // Set the selected ID
+  //   console.log(id)
+  //   dispatch(fetchSetting(id)); // Fetch the setting data
+  // };
+
+  const router = useRouter();
+
+  // const handleClick = (id) => {
+  //   setSelectedId(id);
+  //   router.push('/etable'); // Navigate to the EtablePage
+  //   dispatch(fetchSetting(id));
+  // };
+  const handleClick = (id) => {
+    // Navigate to the Etable page with the specific ID
+    router.push(`/etable/${id}`);
+  };
+  // 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -78,7 +100,7 @@ const TablePage = () => {
 
   return (
     <div>
-      <h1>Data Table</h1>
+      <h1>Strategy List</h1>
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
@@ -101,6 +123,16 @@ const TablePage = () => {
                   Title
                 </TableSortLabel>
               </TableCell>
+              <TableCell>
+                <TableSortLabel
+                  active={orderBy === 'email'}
+                  direction={orderBy === 'email' ? order : 'asc'}
+                  onClick={() => handleSort('email')}
+                >
+                  Email
+                </TableSortLabel>
+              </TableCell>
+              <TableCell>Action</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -110,11 +142,15 @@ const TablePage = () => {
                 <TableRow key={item.id}>
                   <TableCell>{item.id}</TableCell>
                   <TableCell>{item.name}</TableCell>
+                  <TableCell>{item.email}</TableCell>
+                  <TableCell>
+                    <button onClick={() => handleClick(item.id)}>View</button>
+                  </TableCell>
                 </TableRow>
               ))}
             {emptyRows > 0 && (
               <TableRow style={{ height: 53 * emptyRows }}>
-                <TableCell colSpan={2} />
+                <TableCell colSpan={4} />
               </TableRow>
             )}
           </TableBody>
@@ -129,6 +165,9 @@ const TablePage = () => {
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
+
+      {/* Render Etable component with the selected ID */}
+      {selectedId && <Etable id={selectedId} />}
     </div>
   );
 };

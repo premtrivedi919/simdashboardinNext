@@ -36,6 +36,14 @@ body{
   margin:0;
   font-family: "Segoe UI Regular";
 }
+.c2btn{
+  cursor: pointer;
+ background: #fff;
+ border: none;
+}
+.sign-in-wrapper1form{
+  width:420px;
+}
 .css-1qgma8u-MuiButtonBase-root-MuiTableSortLabel-root{
   color: var(--light-color-text-subtle, #44546F);
 /* Heading/H200// */
@@ -52,7 +60,7 @@ font-family: SF Pro Text;
 line-height: 20px;
 }
 .css-1ygcj2i-MuiTableCell-root {
-  text-align: right;
+  text-align: left !important;
 }
 .seetingtbl > .css-10dfkli-MuiTableCell-root{
   text-align: right !important;
@@ -220,17 +228,23 @@ flex-direction:row;
 
 }
 .css-hip9hq-MuiPaper-root-MuiAppBar-root{
-  background-color:white;
+  box-shadow: none !important;
+  background-color:white !important;
 }
 .css-1q39md6-MuiButtonBase-root-MuiButton-root{
-  color:black
+  color:black !important;
+  color: #C21C1D;
+font-size: 14px;
+font-family: SF Pro Text;
+font-weight: 500;
+line-height: 32px;
 }
 .rememberme{
   display: flex;
   flex-direction: row !important;
 }
 .mainform{
-  width:452px;
+  width:452px !important;
 }
 .sign-in4 {
     position: relative;
@@ -1723,10 +1737,18 @@ flex-direction:row;
       padding-left: 10px;
       box-sizing: border-box;
     }
+ 
   }
   
   
   @media screen and (min-width: 421px) and (max-width: 960px) {
+    .sign-in-wrapper1form{
+      width:80%;
+    }
+    .css-1lvtzne{
+      justify-content: flex-end ;
+    }
+    
     .mainform{
       width:100%;
     }
@@ -1739,6 +1761,16 @@ flex-direction:row;
     /* .cardstrategy{flex-direction:column;} */
   }
   @media screen and (min-width: 0px) and (max-width: 420px) {
+    .sign-in-wrapper1form{
+      width:80%;
+    }
+   
+    .css-1lvtzne{
+      justify-content: flex-end ;
+    }
+    .strategycont{
+      margin-left:46px;
+    }
     .mainform{
       width:100%;
     }
