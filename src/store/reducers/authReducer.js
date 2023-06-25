@@ -1,15 +1,24 @@
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
-
 const initialState = {
-  isAuthenticated: false,
+  isLoggedIn: false,
 };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN_SUCCESS:
+    case 'LOGIN_REQUEST':
       return {
         ...state,
-        isAuthenticated: true,
+        isLoggedIn: false,
+      };
+    case 'LOGIN_SUCCESS':
+      return {
+        ...state,
+        isLoggedIn: true,
+      };
+    case 'LOGIN_FAILURE':
+      return {
+        ...state,
+        isLoggedIn: false,
+        error: action.payload,
       };
     default:
       return state;
