@@ -26,7 +26,7 @@ const Signin1 = () => {
               </div>
               <div className="helper1">{`Minimum 6 characters `}</div>
             </div>
-<div class="rememberme">            <input type="checkbox" id="chbox" name="y" value="y"/>  <div>Remember me</div>
+<div className="rememberme">            <input type="checkbox" id="chbox" name="y" value="y"/>  <div>Remember me</div>
 </div>
 
           </div>

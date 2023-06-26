@@ -36,6 +36,106 @@ body{
   margin:0;
   font-family: "Segoe UI Regular";
 }
+.body{
+  margin-left:46px;
+  margin-right:46px;
+}
+.headerline{
+  color: #44546F;
+font-size: 14px;
+font-family: SF Pro Text;
+font-weight: 500;
+line-height: 32px;
+}
+.bodynewbase{
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+.df{
+  display: flex;
+  flex-direction: row;
+}
+.headerlist{
+  color: #44546F;
+font-size: 14px;
+font-family: SF Pro Text;
+font-weight: 500;
+line-height: 32px;
+}
+.tablerepo{
+
+  margin-top:20px;
+  margin-bottom:40px;
+}
+.setname{
+  color: #44546F;
+font-size: 32px;
+font-family: SF Pro Text;
+font-weight: 500;
+line-height: 48px;
+}
+.setname12{
+  color: #44546F;
+text-align: left;
+/* .Internal/Lozenge/.Lozenge label */
+font-size: 11px;
+font-family: SF Pro Text;
+font-weight: 700;
+line-height: 16px;
+text-transform: uppercase;
+}
+.setname11{
+  color: var(--light-color-text-subtle, #44546F);
+/* Heading/H200// */
+font-size: 12px;
+font-family: SF Pro Text;
+font-weight: 600;
+line-height: 16px;
+}
+.setname1{
+  color: #44546F;
+  font-size: 18px;
+  font-family: SF Pro Text;
+  font-weight: 600;
+  line-height: 26px;
+}
+.bodynew{
+  display:flex;
+  flex-direction:row;
+  width: 90%;
+  margin:26px;
+  justify-content: space-between;
+  color:black;
+text-align: center;
+margin-bottom:46px;
+/* .Internal/Breadcrumbs/.BreadcrumbText */
+font-size: 14px;
+font-family: SF Pro Text;
+line-height: 24px;
+}
+/* .css-ag7rrr-MuiTypography-root{
+  width: 275px;
+} */
+
+.css-9eg9l8-MuiTypography-root {
+  max-width: 160px !important;
+}
+.c2btn{
+  cursor: pointer;
+ background: #fff;
+ border: none;
+}
+.sign-in-wrapper1form{
+  width:420px;
+}
+.css-l01nst-MuiPaper-root-MuiCard-root, .css-bbgsq2-MuiPaper-root-MuiCard-root{
+  width:250px !important;
+}
+.css-bbgsq2-MuiPaper-root-MuiCard-root{
+  min-width: 250px !important;
+}
+
 .css-1qgma8u-MuiButtonBase-root-MuiTableSortLabel-root{
   color: var(--light-color-text-subtle, #44546F);
 /* Heading/H200// */
@@ -51,9 +151,9 @@ font-size: 14px;
 font-family: SF Pro Text;
 line-height: 20px;
 }
-.css-1ygcj2i-MuiTableCell-root {
-  text-align: right;
-}
+/* .css-1ygcj2i-MuiTableCell-root {
+  text-align: left !important;
+} */
 .seetingtbl > .css-10dfkli-MuiTableCell-root{
   text-align: right !important;
 }
@@ -220,17 +320,23 @@ flex-direction:row;
 
 }
 .css-hip9hq-MuiPaper-root-MuiAppBar-root{
-  background-color:white;
+  box-shadow: none !important;
+  background-color:white !important;
 }
 .css-1q39md6-MuiButtonBase-root-MuiButton-root{
-  color:black
+  color:black !important;
+  color: #C21C1D;
+font-size: 14px;
+font-family: SF Pro Text;
+font-weight: 500;
+line-height: 32px;
 }
 .rememberme{
   display: flex;
   flex-direction: row !important;
 }
 .mainform{
-  width:452px;
+  width:452px !important;
 }
 .sign-in4 {
     position: relative;
@@ -1723,10 +1829,18 @@ flex-direction:row;
       padding-left: 10px;
       box-sizing: border-box;
     }
+ 
   }
   
   
   @media screen and (min-width: 421px) and (max-width: 960px) {
+    .sign-in-wrapper1form{
+      width:80%;
+    }
+    .css-1lvtzne{
+      justify-content: flex-end ;
+    }
+    
     .mainform{
       width:100%;
     }
@@ -1739,6 +1853,16 @@ flex-direction:row;
     /* .cardstrategy{flex-direction:column;} */
   }
   @media screen and (min-width: 0px) and (max-width: 420px) {
+    .sign-in-wrapper1form{
+      width:80%;
+    }
+   
+    .css-1lvtzne{
+      justify-content: flex-end ;
+    }
+    .strategycont{
+      margin-left:46px;
+    }
     .mainform{
       width:100%;
     }
