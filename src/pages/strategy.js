@@ -41,7 +41,7 @@ const Strategy = () => {
       <div className="strategycont">
       <div className="aligntext">
           <div>
-            <span class="c1">Equity</span> <span class="c11">US</span>
+            <span className="c1">Equity</span> <span className="c11">US</span>
           </div>
 
 
@@ -105,7 +105,8 @@ Users-following- {strategy.id}
           <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
           <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
           <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
-         
+          <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
+
         </div>
       </div>
     </>

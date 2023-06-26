@@ -4,7 +4,7 @@ const Page = () => {
   return (
     <div className="sign-up-wrapper">
       
-      <form class="mainform">
+      <form className="mainform">
       <Signin1 />
 
       </form>

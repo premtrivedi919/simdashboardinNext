@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchSetting } from '../../store/actions/settingActions';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination } from '@mui/material';
 import { fetchComments } from '../../store/actions/supportActions';
-
 const EtablePage = () => {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -55,40 +55,46 @@ const EtablePage = () => {
   return (
     <div className="body">
       <div className="bodynew">
+      <Image src="/favicon.png" alt="Logo" width={70} height={50} />
         <div>Markets</div>
         <div>Rejected</div>
         <div>Accounts</div>
       </div>
 
+
+
+      <div className="setname1">Detail List</div>
+
+
       <TableContainer component={Paper}>
-        <Table>
+        <Table className="tablerepo">
           <TableHead>
             <TableRow>
-              <TableCell>Initial Balance</TableCell>
-              <TableCell>Current Balance</TableCell>
-              <TableCell>ROI</TableCell>
-              <TableCell>SL</TableCell>
-              <TableCell>TP</TableCell>
-              <TableCell>Qty</TableCell>
-              <TableCell>Quantity</TableCell>
-              <TableCell>Inverse</TableCell>
-              <TableCell>Pyramiding</TableCell>
-              <TableCell>Action</TableCell>
+              <TableCell className="setname11">Initial Balance</TableCell>
+              <TableCell className="setname11">Current Balance</TableCell>
+              <TableCell className="setname11">ROI</TableCell>
+              <TableCell className="setname11">SL</TableCell>
+              <TableCell className="setname11">TP</TableCell>
+              <TableCell className="setname11">Qty</TableCell>
+              <TableCell className="setname11">Quantity</TableCell>
+              <TableCell className="setname11">Inverse</TableCell>
+              <TableCell className="setname11">Pyramiding</TableCell>
+              <TableCell className="setname11">Action</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {renderedData.map((item) => (
               <TableRow key={item.id}>
-                <TableCell>{item.id}</TableCell>
-                <TableCell>{item.id}</TableCell>
-                <TableCell>{item.title}</TableCell>
-                <TableCell>{item.id}</TableCell>
-                <TableCell>{item.body}</TableCell>
-                <TableCell>{item.id}</TableCell>
-                <TableCell>{item.name}</TableCell>
-                <TableCell>{item.id}</TableCell>
-                <TableCell>{item.email}</TableCell>
-                <TableCell>
+                <TableCell className="setname12">{item.id}</TableCell>
+                <TableCell className="setname12">{item.id}</TableCell>
+                <TableCell className="setname12">{item.title}</TableCell>
+                <TableCell className="setname12">{item.id}</TableCell>
+                <TableCell className="setname12">{item.body}</TableCell>
+                <TableCell className="setname12">{item.id}</TableCell>
+                <TableCell className="setname12">{item.name}</TableCell>
+                <TableCell className="setname12">{item.id}</TableCell>
+                <TableCell className="setname12">{item.email}</TableCell>
+                <TableCell className="setname12">
                   <button onClick={() => handleClick(item.id)}>View</button>
                 </TableCell>
               </TableRow>

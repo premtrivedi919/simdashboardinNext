@@ -9,7 +9,7 @@ export const fetchStrategiesRequest = () => ({
 });
 
 export const fetchStrategiesSuccess = (strategies) => {
-  const limitedStrategies = strategies.slice(0, 3); // Limiting to 4 objects
+  const limitedStrategies = strategies.slice(0, 4); // Limiting to 4 objects
   return {
     type: FETCH_STRATEGIES_SUCCESS,
     payload: limitedStrategies,

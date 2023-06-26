@@ -100,9 +100,9 @@ const TablePage = () => {
 
   return (
     <div>
-      <h1>Strategy List</h1>
+      <div className="setname1"> Equity/Option/Spot</div>
       <TableContainer component={Paper}>
-        <Table>
+        <Table className="tablerepo">
           <TableHead>
             <TableRow>
              
@@ -165,19 +165,19 @@ const TablePage = () => {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((item) => (
                 <TableRow key={item.id}>
-                  <TableCell>{item.id}</TableCell>
-                  <TableCell>{item.title}</TableCell>
-                  <TableCell>{item.id}</TableCell>
-                  <TableCell>{item.id}</TableCell>
-                  <TableCell>{item.id}</TableCell>
-                  <TableCell>
+                  <TableCell className="setname12">{item.id}</TableCell>
+                  <TableCell className="setname12">{item.title}</TableCell>
+                  <TableCell className="setname12">{item.id}</TableCell>
+                  <TableCell className="setname12">{item.id}</TableCell>
+                  <TableCell className="setname12">{item.id}</TableCell>
+                  <TableCell className="setname12">
                     <button onClick={() => handleClick(item.id)}>View</button>
                   </TableCell>
                 </TableRow>
               ))}
             {emptyRows > 0 && (
               <TableRow style={{ height: 53 * emptyRows }}>
-                <TableCell colSpan={4} />
+                <TableCell  colSpan={4} />
               </TableRow>
             )}
           </TableBody>
