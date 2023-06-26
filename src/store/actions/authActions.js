@@ -1,3 +1,7 @@
+
+import Cookies from 'js-cookie';
+
+
 import axios from 'axios';
 
 export const login = (username, password, onSuccess) => {
@@ -9,7 +13,7 @@ export const login = (username, password, onSuccess) => {
         'http://localhost:8888/api/user/login',
         { username, password }
       );
-
+      Cookies.set('token', response.data.token);
       dispatch({ type: 'LOGIN_SUCCESS', payload: response.data });
 
       // Call the onSuccess callback
@@ -19,6 +23,16 @@ export const login = (username, password, onSuccess) => {
     } catch (error) {
       dispatch({ type: 'LOGIN_FAILURE', payload: error.message });
     }
+  };
+};
+
+
+export const logout = () => {
+  return (dispatch) => {
+    // Clear the token from the cookie or any other necessary cleanup
+    Cookies.remove('token');
+
+    dispatch({ type: 'LOGOUT' });
   };
 };
 

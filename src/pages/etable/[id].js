@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, TablePagination } from '@mui/material';
 import { fetchComments } from '../../store/actions/supportActions';
+import { logout } from '../../store/actions/authActions';
+
 const EtablePage = () => {
   const dispatch = useDispatch();
   const router = useRouter();
@@ -52,13 +54,25 @@ const EtablePage = () => {
     renderedData = [data];
   }
 
+
+  const handleLogout = () => {
+  
+  
+    dispatch(logout());
+    router.push('/');
+  };
+
   return (
     <div className="body">
       <div className="bodynew">
-      <Image src="/favicon.png" alt="Logo" width={70} height={50} />
-        <div>Markets</div>
-        <div>Rejected</div>
-        <div>Accounts</div>
+       <div className='bodynewbase'>       <Image src="/favicon2.png" alt="Logo" width={119} height={32} />
+
+        <div className='headerline'>Markets</div>
+        <div className='headerline'>Rejected</div>
+        <div className='headerline'>Accounts</div></div>
+       
+         <div onClick={handleLogout}>  <Image src="/logout.png" alt="Logo" width={24} height={24} /></div>
+        
       </div>
 
 

@@ -1,7 +1,10 @@
-const initialState = {
-  isLoggedIn: false,
-};
+import Cookies from 'js-cookie';
 
+
+const initialState = {
+  isLoggedIn: Cookies.get('token') ? true : false, // Check if token exists in the cookie
+  error: null,
+};
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'LOGIN_REQUEST':
@@ -14,6 +17,13 @@ const authReducer = (state = initialState, action) => {
         ...state,
         isLoggedIn: true,
       };
+
+      case 'LOGOUT':
+        return {
+          ...state,
+          isLoggedIn: false,
+        };
+  
     case 'LOGIN_FAILURE':
       return {
         ...state,

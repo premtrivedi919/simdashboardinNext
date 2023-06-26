@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 import { Document, Page, Text, View, StyleSheet, PDFDownloadLink } from '@react-pdf/renderer';
 import Image from 'next/image';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TablePagination } from '@mui/material';
+import { logout } from '../../store/actions/authActions';
 
 const styles = StyleSheet.create({
   page: {
@@ -67,38 +68,13 @@ const Report = () => {
     return <div>Error: {error}</div>;
   }
 
-  const MyDocument = () => (
-    <Document>
-      <Page size="A4" style={styles.page}>
-        <View style={styles.section}>
-          {comments.map((comment) => (
-            <View key={comment.id} style={styles.section}>
-              <Text style={styles.heading}>{comment.name}</Text>
-              <Text style={styles.text}>{comment.body}</Text>
-            </View>
-          ))}
-        </View>
-
-        <View style={styles.section}>
-          {commentsc.map((comment) => (
-            <View key={comment.id} style={styles.section}>
-              <Text style={styles.heading}>{comment.name}</Text>
-              <Text style={styles.text}>{comment.body}</Text>
-            </View>
-          ))}
-        </View>
-
-        <View style={styles.section}>
-          {commentso.map((comment) => (
-            <View key={comment.id} style={styles.section}>
-              <Text style={styles.heading}>{comment.name}</Text>
-              <Text style={styles.text}>{comment.body}</Text>
-            </View>
-          ))}
-        </View>
-      </Page>
-    </Document>
-  );
+  const handleLogout = () => {
+  
+  
+    dispatch(logout());
+    router.push('/');
+  };
+  
 
   const handleGeneratePDF = () => {
     if (pdfRef.current) {
@@ -119,14 +95,18 @@ const Report = () => {
   const tableRows = comments.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
 
   return (
-    <div>
+    <div className='body'>
       <div className="body">
-        <div className="bodynew">
-          <Image src="/favicon.png" alt="Logo" width={70} height={50} />
-          <div>Markets</div>
-          <div>Rejected</div>
-          <div>Accounts</div>
-        </div>
+      <div className="bodynew">
+       <div className='bodynewbase'>       <Image src="/favicon2.png" alt="Logo" width={119} height={32} />
+
+        <div className='headerline'>Markets</div>
+        <div className='headerline'>Rejected</div>
+        <div className='headerline'>Accounts</div></div>
+       
+         <div onClick={handleLogout}>  <Image src="/logout.png" alt="Logo" width={24} height={24} /></div>
+        
+      </div>
 
 
 <div className="setname1">SETTING</div>
@@ -275,13 +255,8 @@ const Report = () => {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
 
-        <PDFDownloadLink document={<MyDocument />} fileName="report.pdf">
-          {({ loading }) => (loading ? 'Generating PDF...' : <button onClick={handleGeneratePDF}>Generate PDF</button>)}
-        </PDFDownloadLink>
 
-        <div style={{ visibility: 'hidden' }}>
-          <MyDocument ref={pdfRef} />
-        </div>
+
       </div>
     </div>
   );

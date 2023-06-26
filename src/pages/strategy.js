@@ -4,8 +4,8 @@ import { useRouter } from 'next/router';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { logout } from '../store/actions/authActions';
 
-import ResponsiveAppBar from '../components/header';
 import { fetchStrategies } from '../store/actions/strategyActions';
 import BasicCard from '../components/card';
 
@@ -33,10 +33,26 @@ const Strategy = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-
+  const handleLogout = () => {
+  
+  
+    dispatch(logout());
+    router.push('/');
+  };
+  
   return (
     <>
-      <ResponsiveAppBar />
+<div className='body'>
+
+      <div className="bodynew">
+       <div className='bodynewbase'>  <img src="favicon2.png" />
+        <div className='headerline'>Markets</div>
+        <div className='headerline'>Rejected</div>
+        <div className='headerline'>Accounts</div></div>
+       
+         <div onClick={handleLogout}>  <img src="logout.png" /></div>
+        
+      </div>
 
       <div className="strategycont">
       <div className="aligntext">
@@ -108,7 +124,7 @@ Users-following- {strategy.id}
           <BasicCard word="RF 100 -15M" tag1="Investment -" tag2="ROI" tag3="Drawdown" tag4="users-following" />
 
         </div>
-      </div>
+      </div></div>
     </>
   );
 };

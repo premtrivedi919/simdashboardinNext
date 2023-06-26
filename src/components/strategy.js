@@ -1,10 +1,10 @@
 import Page from "../components/page";
 import BasicCard from "@/components/card";
-import ResponsiveAppBar from "./components/header.js";
+import Header from '../components/header';
 const SignIn = () => {
   return (
     <>
-      <ResponsiveAppBar />
+   <Header />
 
       <div className="strategycont">
         <div className="aligntext">
